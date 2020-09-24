@@ -30,26 +30,26 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.addBox = new System.Windows.Forms.GroupBox();
+            this.addButton = new System.Windows.Forms.Button();
+            this.positionInput = new System.Windows.Forms.TextBox();
+            this.teamInput = new System.Windows.Forms.TextBox();
+            this.ageInput = new System.Windows.Forms.TextBox();
+            this.nameInput = new System.Windows.Forms.TextBox();
+            this.positionLabel = new System.Windows.Forms.Label();
+            this.teamLabel = new System.Windows.Forms.Label();
+            this.ageLabel = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
             this.titleLabel = new System.Windows.Forms.Label();
-            this.ageLabel = new System.Windows.Forms.Label();
-            this.teamLabel = new System.Windows.Forms.Label();
-            this.positionLabel = new System.Windows.Forms.Label();
-            this.c = new System.Windows.Forms.TextBox();
-            this.ageInput = new System.Windows.Forms.TextBox();
-            this.teamInput = new System.Windows.Forms.TextBox();
-            this.positionInput = new System.Windows.Forms.TextBox();
-            this.addButton = new System.Windows.Forms.Button();
             this.removeBox = new System.Windows.Forms.GroupBox();
             this.removeButton = new System.Windows.Forms.Button();
             this.removeInput = new System.Windows.Forms.TextBox();
             this.nameLabel2 = new System.Windows.Forms.Label();
             this.displayBox = new System.Windows.Forms.GroupBox();
-            this.searchButton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.nameLabel3 = new System.Windows.Forms.Label();
             this.showButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.searchButton = new System.Windows.Forms.Button();
+            this.searchInput = new System.Windows.Forms.TextBox();
+            this.nameLabel3 = new System.Windows.Forms.Label();
+            this.outputLabel = new System.Windows.Forms.TextBox();
             this.addBox.SuspendLayout();
             this.removeBox.SuspendLayout();
             this.displayBox.SuspendLayout();
@@ -61,7 +61,7 @@
             this.addBox.Controls.Add(this.positionInput);
             this.addBox.Controls.Add(this.teamInput);
             this.addBox.Controls.Add(this.ageInput);
-            this.addBox.Controls.Add(this.c);
+            this.addBox.Controls.Add(this.nameInput);
             this.addBox.Controls.Add(this.positionLabel);
             this.addBox.Controls.Add(this.teamLabel);
             this.addBox.Controls.Add(this.ageLabel);
@@ -74,6 +74,75 @@
             this.addBox.TabIndex = 0;
             this.addBox.TabStop = false;
             this.addBox.Text = "New Player";
+            // 
+            // addButton
+            // 
+            this.addButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addButton.Location = new System.Drawing.Point(119, 169);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(75, 37);
+            this.addButton.TabIndex = 8;
+            this.addButton.Text = "Add";
+            this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            // 
+            // positionInput
+            // 
+            this.positionInput.Location = new System.Drawing.Point(73, 133);
+            this.positionInput.Name = "positionInput";
+            this.positionInput.Size = new System.Drawing.Size(121, 22);
+            this.positionInput.TabIndex = 7;
+            // 
+            // teamInput
+            // 
+            this.teamInput.Location = new System.Drawing.Point(73, 98);
+            this.teamInput.Name = "teamInput";
+            this.teamInput.Size = new System.Drawing.Size(121, 22);
+            this.teamInput.TabIndex = 6;
+            // 
+            // ageInput
+            // 
+            this.ageInput.Location = new System.Drawing.Point(73, 65);
+            this.ageInput.Name = "ageInput";
+            this.ageInput.Size = new System.Drawing.Size(36, 22);
+            this.ageInput.TabIndex = 5;
+            // 
+            // nameInput
+            // 
+            this.nameInput.Location = new System.Drawing.Point(73, 33);
+            this.nameInput.Name = "nameInput";
+            this.nameInput.Size = new System.Drawing.Size(121, 22);
+            this.nameInput.TabIndex = 4;
+            // 
+            // positionLabel
+            // 
+            this.positionLabel.AutoSize = true;
+            this.positionLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.positionLabel.Location = new System.Drawing.Point(6, 137);
+            this.positionLabel.Name = "positionLabel";
+            this.positionLabel.Size = new System.Drawing.Size(54, 17);
+            this.positionLabel.TabIndex = 3;
+            this.positionLabel.Text = "Position";
+            // 
+            // teamLabel
+            // 
+            this.teamLabel.AutoSize = true;
+            this.teamLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.teamLabel.Location = new System.Drawing.Point(7, 103);
+            this.teamLabel.Name = "teamLabel";
+            this.teamLabel.Size = new System.Drawing.Size(39, 17);
+            this.teamLabel.TabIndex = 2;
+            this.teamLabel.Text = "Team";
+            // 
+            // ageLabel
+            // 
+            this.ageLabel.AutoSize = true;
+            this.ageLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ageLabel.Location = new System.Drawing.Point(7, 65);
+            this.ageLabel.Name = "ageLabel";
+            this.ageLabel.Size = new System.Drawing.Size(31, 17);
+            this.ageLabel.TabIndex = 1;
+            this.ageLabel.Text = "Age";
             // 
             // nameLabel
             // 
@@ -96,75 +165,6 @@
             this.titleLabel.TabIndex = 1;
             this.titleLabel.Text = "Team Database";
             this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ageLabel
-            // 
-            this.ageLabel.AutoSize = true;
-            this.ageLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ageLabel.Location = new System.Drawing.Point(7, 65);
-            this.ageLabel.Name = "ageLabel";
-            this.ageLabel.Size = new System.Drawing.Size(31, 17);
-            this.ageLabel.TabIndex = 1;
-            this.ageLabel.Text = "Age";
-            // 
-            // teamLabel
-            // 
-            this.teamLabel.AutoSize = true;
-            this.teamLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.teamLabel.Location = new System.Drawing.Point(7, 103);
-            this.teamLabel.Name = "teamLabel";
-            this.teamLabel.Size = new System.Drawing.Size(39, 17);
-            this.teamLabel.TabIndex = 2;
-            this.teamLabel.Text = "Team";
-            // 
-            // positionLabel
-            // 
-            this.positionLabel.AutoSize = true;
-            this.positionLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.positionLabel.Location = new System.Drawing.Point(6, 137);
-            this.positionLabel.Name = "positionLabel";
-            this.positionLabel.Size = new System.Drawing.Size(54, 17);
-            this.positionLabel.TabIndex = 3;
-            this.positionLabel.Text = "Position";
-            // 
-            // c
-            // 
-            this.c.Location = new System.Drawing.Point(73, 33);
-            this.c.Name = "c";
-            this.c.Size = new System.Drawing.Size(121, 22);
-            this.c.TabIndex = 4;
-            // 
-            // ageInput
-            // 
-            this.ageInput.Location = new System.Drawing.Point(73, 65);
-            this.ageInput.Name = "ageInput";
-            this.ageInput.Size = new System.Drawing.Size(36, 22);
-            this.ageInput.TabIndex = 5;
-            // 
-            // teamInput
-            // 
-            this.teamInput.Location = new System.Drawing.Point(73, 98);
-            this.teamInput.Name = "teamInput";
-            this.teamInput.Size = new System.Drawing.Size(121, 22);
-            this.teamInput.TabIndex = 6;
-            // 
-            // positionInput
-            // 
-            this.positionInput.Location = new System.Drawing.Point(73, 133);
-            this.positionInput.Name = "positionInput";
-            this.positionInput.Size = new System.Drawing.Size(121, 22);
-            this.positionInput.TabIndex = 7;
-            // 
-            // addButton
-            // 
-            this.addButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addButton.Location = new System.Drawing.Point(119, 169);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(75, 37);
-            this.addButton.TabIndex = 8;
-            this.addButton.Text = "Add";
-            this.addButton.UseVisualStyleBackColor = true;
-            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // removeBox
             // 
@@ -210,10 +210,10 @@
             // 
             // displayBox
             // 
-            this.displayBox.Controls.Add(this.label1);
+            this.displayBox.Controls.Add(this.outputLabel);
             this.displayBox.Controls.Add(this.showButton);
             this.displayBox.Controls.Add(this.searchButton);
-            this.displayBox.Controls.Add(this.textBox1);
+            this.displayBox.Controls.Add(this.searchInput);
             this.displayBox.Controls.Add(this.nameLabel3);
             this.displayBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.displayBox.ForeColor = System.Drawing.Color.White;
@@ -224,38 +224,10 @@
             this.displayBox.TabStop = false;
             this.displayBox.Text = "Output";
             // 
-            // searchButton
-            // 
-            this.searchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.searchButton.Location = new System.Drawing.Point(200, 33);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(75, 22);
-            this.searchButton.TabIndex = 8;
-            this.searchButton.Text = "Search";
-            this.searchButton.UseVisualStyleBackColor = true;
-            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(73, 33);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 22);
-            this.textBox1.TabIndex = 4;
-            // 
-            // nameLabel3
-            // 
-            this.nameLabel3.AutoSize = true;
-            this.nameLabel3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameLabel3.Location = new System.Drawing.Point(7, 33);
-            this.nameLabel3.Name = "nameLabel3";
-            this.nameLabel3.Size = new System.Drawing.Size(43, 17);
-            this.nameLabel3.TabIndex = 0;
-            this.nameLabel3.Text = "Name";
-            // 
             // showButton
             // 
             this.showButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.showButton.Location = new System.Drawing.Point(200, 65);
+            this.showButton.Location = new System.Drawing.Point(202, 65);
             this.showButton.Name = "showButton";
             this.showButton.Size = new System.Drawing.Size(75, 22);
             this.showButton.TabIndex = 9;
@@ -263,15 +235,43 @@
             this.showButton.UseVisualStyleBackColor = true;
             this.showButton.Click += new System.EventHandler(this.showButton_Click);
             // 
-            // label1
+            // searchButton
             // 
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(10, 103);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(265, 238);
-            this.label1.TabIndex = 10;
+            this.searchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchButton.Location = new System.Drawing.Point(202, 33);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(75, 22);
+            this.searchButton.TabIndex = 8;
+            this.searchButton.Text = "Search";
+            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            // 
+            // searchInput
+            // 
+            this.searchInput.Location = new System.Drawing.Point(73, 33);
+            this.searchInput.Name = "searchInput";
+            this.searchInput.Size = new System.Drawing.Size(121, 22);
+            this.searchInput.TabIndex = 4;
+            // 
+            // nameLabel3
+            // 
+            this.nameLabel3.AutoSize = true;
+            this.nameLabel3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameLabel3.Location = new System.Drawing.Point(9, 33);
+            this.nameLabel3.Name = "nameLabel3";
+            this.nameLabel3.Size = new System.Drawing.Size(43, 17);
+            this.nameLabel3.TabIndex = 0;
+            this.nameLabel3.Text = "Name";
+            // 
+            // outputLabel
+            // 
+            this.outputLabel.Location = new System.Drawing.Point(12, 103);
+            this.outputLabel.Multiline = true;
+            this.outputLabel.Name = "outputLabel";
+            this.outputLabel.ReadOnly = true;
+            this.outputLabel.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.outputLabel.Size = new System.Drawing.Size(265, 243);
+            this.outputLabel.TabIndex = 10;
             // 
             // Form1
             // 
@@ -303,7 +303,7 @@
         private System.Windows.Forms.TextBox positionInput;
         private System.Windows.Forms.TextBox teamInput;
         private System.Windows.Forms.TextBox ageInput;
-        private System.Windows.Forms.TextBox c;
+        private System.Windows.Forms.TextBox nameInput;
         private System.Windows.Forms.Label positionLabel;
         private System.Windows.Forms.Label teamLabel;
         private System.Windows.Forms.Label ageLabel;
@@ -314,11 +314,11 @@
         private System.Windows.Forms.TextBox removeInput;
         private System.Windows.Forms.Label nameLabel2;
         private System.Windows.Forms.GroupBox displayBox;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button showButton;
         private System.Windows.Forms.Button searchButton;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox searchInput;
         private System.Windows.Forms.Label nameLabel3;
+        private System.Windows.Forms.TextBox outputLabel;
     }
 }
 

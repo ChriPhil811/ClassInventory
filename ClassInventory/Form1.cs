@@ -12,7 +12,8 @@ namespace ClassInventory
 {
     public partial class Form1 : Form
     {
-        // TODO - create a List to store all inventory objects
+        //create a List to store all inventory objects
+        List<Player> playerList = new List<Player>();
 
         public Form1()
         {
@@ -21,43 +22,74 @@ namespace ClassInventory
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            // TODO - gather all information from screen 
+            //gather all information from screen 
+            string name = nameInput.Text;
+            int age = Convert.ToInt16(ageInput.Text);
+            string team = teamInput.Text;
+            string position = positionInput.Text;
 
-            // TODO - create object with gathered information
+            Player newPlayer = new Player(name, age, team, position); //create object with gathered information
 
-            // TODO - add object to global list
+            playerList.Add(newPlayer); //add object to global list
 
-            // TODO - display message to indicate addition made
+            outputLabel.Text = "New Player Added."; //display message to indicate addition made
+
+            //clear input boxes
+            nameInput.Text = "";
+            ageInput.Text = "";
+            teamInput.Text = "";
+            positionInput.Text = "";
         }
 
         private void removeButton_Click(object sender, EventArgs e)
         {
-            // This is to be completed in Part II. You will use 
-            // Lambda Expressions.
-            //---------------------------
-
             // TODO - if object is in list remove it
-
             // TODO - display message to indicate deletion made
+            int index = playerList.FindIndex(x => x.name == removeInput.Text);
+
+            if (index >= 0)
+            {
+                playerList.RemoveAt(index);
+                outputLabel.Text = "Player Removed Successfully.";
+            }
+            else
+            {
+                outputLabel.Text = "Error, no players with that name exist.";
+            }
         }
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            // This is to be completed in Part II. You will use 
-            // Lambda Expressions.
-            //---------------------------
+            outputLabel.Text = ""; //clear output label
 
-            // TODO - if object entered exists in list show it
-            // TODO - else show not found message
+            //if player entered exists in list show it
+            //else show not found message
+            List<Player> foundPlayers = playerList.FindAll(x => x.name == searchInput.Text);
+
+            if (foundPlayers.Count > 0)
+            {
+                foreach (Player p in foundPlayers)
+                {
+                    outputLabel.Text += p.name + " - " + p.age + " - " + p.team + " - " + p.position + "\r\n";
+                }
+            }
+            else
+            {
+                outputLabel.Text = "Error, no players with that name exist.";
+            }
         }
 
         private void showButton_Click(object sender, EventArgs e)
         {
-            // This is to be completed in Part II. You will use 
-            // Lambda Expressions.
-            //---------------------------
+            outputLabel.Text = ""; //clear output label
 
-            // TODO - show all objects in list
+            playerList = playerList.OrderBy(x => x.name).ThenBy(x => x.age).ThenBy(x => x.team).ThenBy(x => x.position).ToList();
+
+            //show all objects in list
+            foreach (Player p in playerList)
+            {
+                outputLabel.Text += p.name + " - " + p.age + " - " + p.team + " - " + p.position + "\r\n";
+            }
         }
     }
 }
